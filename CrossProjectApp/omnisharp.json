@@ -1,0 +1,6 @@
+{
+    "MsBuild": {
+      "MsBuildSDKsPath": "/usr/local/share/dotnet/sdk/2.2.103/Sdks",
+      "UseLegacySdkResolver": true
+    }
+  }

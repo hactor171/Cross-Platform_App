@@ -1,0 +1,17 @@
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/bin/Release/netstandard2.0/CrossProjectApp.deps.json
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/bin/Release/netstandard2.0/CrossProjectApp.dll
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/bin/Release/netstandard2.0/ref/CrossProjectApp.dll
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/bin/Release/netstandard2.0/CrossProjectApp.pdb
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/App.xaml.g.cs
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/Views/MainPage.xaml.g.cs
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/Views/NewTaskListPage.xaml.g.cs
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/Views/NewTaskPage.xaml.g.cs
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/Views/TasksActivity.xaml.g.cs
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/CrossProjectApp.csproj.CoreCompileInputs.cache
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/CrossProjectApp.AssemblyInfoInputs.cache
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/CrossProjectApp.AssemblyInfo.cs
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/XamlC.stamp
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/CrossProjectApp.dll
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/ref/CrossProjectApp.dll
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/CrossProjectApp.pdb
+/Users/roman/Projects/CrossProjectApp/CrossProjectApp/obj/Release/netstandard2.0/CrossProjectApp.csprojAssemblyReference.cache

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodels="clr-namespace:CrossProjectApp.ViewModels" mc:Ignorable="d" x:Class="CrossProjectApp.Views.MainPage" Title="Main Page" x:Name="this" BackgroundColor="WhiteSmoke">
+    <ContentPage.ToolbarItems>
+       
+    </ContentPage.ToolbarItems>
+        <ContentPage.BindingContext>
+        <viewmodels:ApplicationViewModel />
+    </ContentPage.BindingContext>
+     <StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Frame Margin="10" CornerRadius="10" Grid.Column="0" Grid.Row="0" HasShadow="False">
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                    <Label Text="All tasks" VerticalOptions="Center" FontSize="16"></Label>
+                    <ImageButton x:Name="ImageButton" Source="all_tasks.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent"/>
+                    </StackLayout>
+                    <Label Text="{Binding AllTasksCounter, Mode=TwoWay}" HorizontalOptions="EndAndExpand" FontSize="24" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                </StackLayout>  
+                
+             </Frame>
+             <Frame Margin="10" CornerRadius="10" Grid.Column="1" Grid.Row="0" HasShadow="False">
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                    <Label Text="Incomplete" VerticalOptions="StartAndExpand" FontSize="16"></Label>
+                    <ImageButton x:Name="ImageButton2" Source="done.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent"/>
+                    </StackLayout>
+                    <Label Text="{Binding IncompleteTasksCounter, Mode=TwoWay}" HorizontalOptions="EndAndExpand" FontSize="24" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                </StackLayout>
+             </Frame>
+        </Grid>
+         <StackLayout Padding="15, 15, 0, 0">
+             <Label Text="Lists" FontSize="22" FontAttributes="Bold"/>
+         </StackLayout>
+        <Grid>
+                <Grid VerticalOptions = "FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                <ListView x:Name="TaskListView" ItemsSource="{Binding tasklists}" SelectedItem="{Binding SelectedList, Mode=TwoWay}" HasUnevenRows="true" SeparatorVisibility="None" BackgroundColor="WhiteSmoke" Grid.Row = "0" Grid.Column = "0" Grid.RowSpan = "2" Grid.ColumnSpan = "3">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Delete" IsDestructive="True" IconImageSource="delete_icon.png" Command="{Binding Source={x:Reference this}, Path=BindingContext.DeleteListClicked}" CommandParameter="{Binding .}"/>
+                                     <MenuItem Text="Edit" IconImageSource="edit_icon.png" Command="{Binding Source={x:Reference this}, Path=BindingContext.EditListClicked}" CommandParameter="{Binding .}"/>
+                                </ViewCell.ContextActions>
+
+                                <ViewCell.View>
+                                    <Frame Margin="8" CornerRadius="10" HasShadow="False">
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout>
+                                                <Label Text="{Binding name}" d:Text="{Binding .}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                                                <Label Text="{Binding createtime}" d:Text="Item description" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                                 <Label Text="{Binding counter}" FontSize="16" VerticalOptions="Center"/>
+                                                <ImageButton x:Name="ImageButton" Source="arrow.png" WidthRequest="25" HeightRequest="25" VerticalOptions="Center" BackgroundColor="Transparent"/>
+                                            </StackLayout>
+                                           
+                                            
+                                        </StackLayout>
+                                    </Frame>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Text="+" Command="{Binding AddTaskList}"  FontSize="30" Margin="10" TextColor="White" WidthRequest="60" HeightRequest="60" BorderRadius="30" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="#2196F3" Grid.Row="1" Grid.Column = "2"/>
+            </Grid>
+        </Grid>
+       </StackLayout>
+</ContentPage>
