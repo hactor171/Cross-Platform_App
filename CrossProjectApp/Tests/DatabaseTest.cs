@@ -20,44 +20,5 @@ namespace CrossProjectApp.Tests
         {
             tasklists = new ObservableCollection<tasklist>();
         }
-
-        public void TestRowsUpdate()
-        {
-            startTime = DateTime.Now;
-            Console.WriteLine("Wpis");
-            Console.WriteLine(startTime);
-            for (int i = 0; i < 1000; i++)
-            {
-                App.Database.updateTaskListName(i, "Name" + i);
-            }
-            endTime = DateTime.Now;
-
-            Console.WriteLine(endTime);
-            TimeSpan ts = endTime - startTime;
-            Console.WriteLine(ts.TotalMilliseconds);
-            Console.WriteLine("End Wpis");
-        }
-
-        public void TestGetAll()
-        {
-            startTime = DateTime.Now;
-            Console.WriteLine("Wpis");
-            Console.WriteLine(startTime);
-            App.Database.getTaskLists();
-            endTime = DateTime.Now;
-
-            IEnumerable<tasklist> tmp = App.Database.getTaskLists();
-
-            foreach (tasklist tl in tmp)
-            {
-                tasklists.Add(tl);
-            }
-
-
-            Console.WriteLine(endTime);
-            TimeSpan ts = endTime - startTime;
-            Console.WriteLine(ts.TotalMilliseconds);
-            Console.WriteLine("End Wpis");
-        }
     }
 }
